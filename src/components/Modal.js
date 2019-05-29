@@ -13,7 +13,7 @@ class Modal extends React.Component {
                 alt=""
               />
               <div className="card-body">
-                <h5 className="card-title">{video.title}</h5>
+                <h6 className="card-title">{video.title}</h6>
               </div>
             </NavLink>
           </div>

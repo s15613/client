@@ -1,12 +1,11 @@
 import {
     GET_ALL,
     GET_CATEGORY,
-    GET_ONE,
-    LOADING
+    GET_ONE
 } from './constants'
 
 const initialState = {
-    loading: false,
+    loading: true,
     videos: [],
     toPlay: {}
 }
@@ -16,26 +15,29 @@ export default function (state = initialState, action) {
         case GET_ALL:
             return {
                 ...state,
-                videos: action.payload
+                videos: action.payload,
+                loading: false
             }
         
         case GET_CATEGORY:
             return {
                 ...state,
-                videos: action.payload
+                videos: action.payload,
+                loading: false
             }
 
         case GET_ONE:
             return {
                 ...state,
-                toPlay: action.payload
+                toPlay: action.payload,
+                loading: false
             }
 
-        case LOADING:
-            return {
-                ...state,
-                loading: true
-            }
+        // case LOADING:
+        //     return {
+        //         ...state,
+        //         loading: true
+        //     }
 
         default:
             return state

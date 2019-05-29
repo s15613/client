@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux'
 import { getOne } from '../actions'
+import Loading from "./Loading"
 import "../App.css";
 
 class VideoPlayer extends React.Component {
@@ -9,7 +10,13 @@ class VideoPlayer extends React.Component {
     this.props.getOne(id)
   }
   render() {
-    const { toPlay } = this.props
+    const { toPlay, loading } = this.props
+
+    if( loading )
+    return (
+      <Loading />      
+    )
+
     return (
       <>
         <h4 className="abc mb-3">{toPlay.title}</h4>
@@ -28,7 +35,8 @@ class VideoPlayer extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  toPlay: state.toPlay
+  toPlay: state.toPlay,
+  loading: state.loading
 })
 
 export default connect(mapStateToProps, { getOne })(VideoPlayer);

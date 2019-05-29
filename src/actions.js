@@ -2,15 +2,14 @@ import axios from 'axios'
 import {
     GET_ALL,
     GET_CATEGORY,
-    GET_ONE,
-    LOADING
+    GET_ONE
 } from './constants'
 
 axios.defaults.baseURL = 'https://videosserverapi.herokuapp.com/api'
 
 export const getAll = () => (dispatch) => {
 
-    dispatch({type: LOADING})
+    // dispatch({type: LOADING})
 
     axios.get('/videos')
         .then(res => dispatch({
