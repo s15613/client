@@ -19,7 +19,7 @@ class Home extends React.Component {
 
     return (
       <div className="container mt-3">
-        <h1 className="late">Latest ></h1>
+        <h3 className="late">Latest ></h3>
         <div className="container-fluid">
           <div className="row">
             {videos.map((video,index) => <Modal key = {index} video = {video} />)}
