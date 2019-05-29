@@ -12,7 +12,6 @@ function App() {
       <div className="App">
       <Router>
         <Header />
-
         <Switch>
           {routes.map((route, index) => (
             <Route

@@ -5,7 +5,7 @@ class Header extends React.Component {
   render() {
     return (
     
-      <nav className="navbar navbar-expand-sm navbar-light bg-light mheader">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light mheader container">
         <NavLink className="navbar-brand mlogo" to="/home">
           <img src="https://cdn.worldvectorlogo.com/logos/react.svg" width="30" height="30" className="d-inline-block align-top mr-1" alt="" />
           <span className="home1">ホームページ</span>

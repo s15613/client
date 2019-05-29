@@ -10,8 +10,9 @@ class Sazae extends React.Component {
   }
   render() {
     const { videos } = this.props
+    videos.sort((a,b) => new Date(b.date) - new Date(a.date));
     return (
-      <div className="container-fluid">
+      <div className="container">
         <div className="container-fluid">
           <div className="row mt-5">
             {videos.map((video,index) => <Modal key = {index} video = {video} />)}

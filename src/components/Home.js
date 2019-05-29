@@ -8,9 +8,10 @@ class Home extends React.Component {
     this.props.getAll()
   }
   render() {
-    const { videos } = this.props
+    const { videos } = this.props;
+    videos.sort((a,b) => new Date(b.date) - new Date(a.date));
     return (
-      <div className="container-fluid mt-3">
+      <div className="container mt-3">
         <h1 className="late">Latest ></h1>
         <div className="container-fluid">
           <div className="row">
