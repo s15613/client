@@ -1,5 +1,6 @@
 a:hover {
   text-decoration: none;
+  color: #d82435;
 }
 .container1{
   width: 100%;
@@ -55,4 +56,69 @@ a:hover {
 }
 .late{
   color: #2771ff;
+}
+.pagination1 {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.pagination1 >li {
+  display: inline;
+}
+.pagination1>li>a, .pagination1>li>span {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.pagination1>.active>a, .pagination1>.active>a:focus, .pagination1>.active>a:hover, .pagination1>.active>span, .pagination1>.active>span:focus, .pagination1>.active>span:hover {
+  z-index: 2;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+a { 
+  cursor: pointer; 
+}
+.pagination1>.disabled>a, .pagination1>.disabled>a:focus, .pagination1>.disabled>a:hover, .pagination1>.disabled>span, .pagination1>.disabled>span:focus, .pagination1>.disabled>span:hover {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+  display: none;
+}
+.playbuton {
+  position: absolute;
+  top: 0;
+}
+.cover {
+  overflow: hidden;
+  position: relative;
+}
+.anh {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 27%;
+  left: 40%;
+}
+.image1 {
+  transition: all 0.5s;
+}
+.cover:hover .image1 {
+  transform: scale(1.05);
+}
+.cover:hover .anh {
+  transform: scale(1);
+  opacity: 1;
 }

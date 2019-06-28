@@ -3,8 +3,22 @@ import Modal from "./Modal"
 import { connect } from 'react-redux'
 import { getCategory } from '../actions'
 import Loading from "./Loading"
+import Pagination from './Pagination';
 
 class Sazae extends React.Component {
+
+  constructor() {
+    super()
+    this.state = {
+        pageOfItems: []
+    };
+    this.onChangePage = this.onChangePage.bind(this);
+}
+
+  onChangePage(pageOfItems) {
+    this.setState({ pageOfItems });
+  }
+
   componentDidMount() {
     const { url } = this.props.match
     this.props.getCategory(url)
@@ -22,9 +36,12 @@ class Sazae extends React.Component {
       <div className="container">
         <div className="container-fluid">
           <div className="row mt-5">
-            {videos.map((video,index) => <Modal key = {index} video = {video} />)}
+            {this.state.pageOfItems.map((video,index) => <Modal key = {index} video={video} /> )}
+            </div>
           </div>
-        </div>
+          <div className='text-center'>
+            <Pagination items={videos} onChangePage={this.onChangePage} />
+          </div>
       </div>
     );
   }
